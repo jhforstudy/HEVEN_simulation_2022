@@ -58,3 +58,9 @@ MORAI 시뮬레이터 실행 후, ``F4``를 누르면 Network Setting 메뉴가 
 
 각 센서 설정 완료 후, ``CONNECT`` 버튼을 눌러 rosbridge 터미널에서 client가 추가되는지 확인하자. 만약 에러가 발생하면 데이터를 받아올 수 없다.
 
+
+
+### To-do list
+
+1. subscribe한 topic을 한번에 관리하는 Database 클래스 만들기
+2. 3D lidar를 받아올 때 velodyne 드라이버를 통해서가 아닌, 시뮬레이터 topic (`PointCloud2`)을 직접 받아오기
