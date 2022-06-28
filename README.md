@@ -21,6 +21,7 @@ catkin_make
 ## 시뮬레이터 실행
 
 #### MORAI 시뮬레이터 실행
+MORAI 시뮬레이터가 들어있는 디렉터리로 이동 후, 아래와 같이 실행한다.
 ```
 chmod +x MORAISim.sh
 chmod +x MoraiLauncher_Lin.x86_64
@@ -28,12 +29,14 @@ chmod +x MoraiLauncher_Lin.x86_64
 ```
 
 #### rosbridge 실행
-*주의* : 패키지 안에 ``morai_msg`` 등 외부에서 받은 파일들을 사용해야 하므로, 워크스페이스 내에서 source를 해주고 실행해야 에러가 나지 않는다.
+*주의* : 패키지 안에 ``morai_msg`` 등 외부에서 받은 ``msg`` 파일들을 사용해서 통신하므로, 워크스페이스 내에서 source를 해주고 실행해야 에러가 나지 않는다.
 ```
 cd simul_ws/
 source devel/setup.bash
 roslaunch rosbridge_server rosbridge_websocket.launch 
 ```
+``msg`` 파일은 topic의 정보를 담는 틀의 역할을 한다. ROS에서 제공해주는 ``msg`` 파일의 경우 (``std_msgs``, ``sensor_msgs`` 등) 바로 사용할 수 있지만, 새로 만든 ``msg`` 파일의 경우 해당 작업환경에서 ``source devel/setup.bash``를 해주어야 인식할 수 있다.
+
 
 ## 센서 연결
 
@@ -56,7 +59,7 @@ MORAI 시뮬레이터 실행 후, ``F4``를 누르면 Network Setting 메뉴가 
 #### CAMERA
 ![camera](https://user-images.githubusercontent.com/48710703/175962721-0a6338a4-1395-4923-b927-63c502d1f745.png)
 
-각 센서 설정 완료 후, ``CONNECT`` 버튼을 눌러 rosbridge 터미널에서 client가 추가되는지 확인하자. 만약 에러가 발생하면 데이터를 받아올 수 없다.
+각각의 센서 설정을 완료하고, ``CONNECT`` 버튼을 눌러 rosbridge 터미널에서 client가 추가되는지 확인하자. 만약 에러가 발생하면 데이터를 받아올 수 없다.
 
 
 
