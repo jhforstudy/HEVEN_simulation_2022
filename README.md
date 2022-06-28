@@ -37,6 +37,8 @@ roslaunch rosbridge_server rosbridge_websocket.launch
 ```
 ``msg`` 파일은 topic의 정보를 담는 틀의 역할을 한다. ROS에서 제공해주는 ``msg`` 파일의 경우 (``std_msgs``, ``sensor_msgs`` 등) 바로 사용할 수 있지만, 새로 만든 ``msg`` 파일의 경우 해당 작업환경에서 ``source devel/setup.bash``를 해주어야 인식할 수 있다.
 
+[msg 파일에 관한 자세한 설명](https://github.com/jhforstudy/HEVEN_simulation_2022/blob/main/about_msg.md)
+
 
 ## 센서 연결
 
