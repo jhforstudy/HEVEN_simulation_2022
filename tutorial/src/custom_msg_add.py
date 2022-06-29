@@ -2,25 +2,21 @@
 
 import rospy
 
-from std_msgs.msg import Int32
+from tutorial.msg import TwoVals
 
 
 class SubscribeInt():    
-    def callback1(self, data):
-        self.int_1 = data.data
-        
-    def callback2(self, data):
-        self.int_2 = data.data
+    def callback(self, data):
+        self.int_1 = data.num1
+        self.int_2 = data.num2
 
     def __init__(self):
-        # initialize integers
         self.int_1 = 0
         self.int_2 = 0
 
         rospy.init_node("subscribing_node", anonymous=False)
-        # subscribe
-        rospy.Subscriber("topic1", Int32, self.callback1)
-        rospy.Subscriber("topic2", Int32, self.callback2)
+        # subscribe "TwoVals" topic
+        rospy.Subscriber("combined_topic", TwoVals, self.callback)
         rate = rospy.Rate(5)
 
         while not rospy.is_shutdown():
