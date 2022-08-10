@@ -15,6 +15,8 @@ from sensor_msgs.msg import Image, CompressedImage
 from sensor_msgs.msg import PointCloud2,PointCloud
 from geometry_msgs.msg import Point32
 
+from tf.transformations import euler_from_quaternion
+
 # Size of img frame
 WIDTH, HEIGHT = 640, 480
 
@@ -50,7 +52,8 @@ class Database():
         time.sleep(2)
         
     def imu_callback(self, data):
-        self.imu_orientation = [data.orientation.x, data.orientation.y, data.orientation.z, data.orientation.w]
+        imu_orientation_msg = [data.orientation.x, data.orientation.y, data.orientation.z, data.orientation.w]
+        self.imu_orientation = np.degrees(euler_from_quaternion(imu_orientation_msg))
         self.imu_ang_velocity = [data.angular_velocity.x, data.angular_velocity.y, data.angular_velocity.z]
         self.imu_linear_accel = [data.linear_acceleration.x, data.linear_acceleration.y, data.linear_acceleration.z]
         
