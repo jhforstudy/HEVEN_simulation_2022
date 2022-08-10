@@ -61,7 +61,9 @@ class Database():
         np_arr = np.fromstring(data.data, np.uint8)
         img_bgr = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
         self.camera_data = img_bgr.copy()
-        cv2.imshow("Image window", img_bgr)
+        winname = "Image window"
+        cv2.moveWindow(winname, 40, 30)
+        cv2.imshow(winname, img_bgr)
         cv2.waitKey(1)
 
     def lidar_callback(self, data):
