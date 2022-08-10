@@ -56,7 +56,7 @@ MORAI 시뮬레이터 실행 후, ``F4``를 누르면 Network Setting 메뉴가 
 ![gps](https://user-images.githubusercontent.com/48710703/175962611-7867245b-93ed-4cd0-ad6a-cdc076f35026.png)
 
 #### 3D LIDAR
-![lidar](https://user-images.githubusercontent.com/48710703/175962657-2abbd927-df7e-47ee-a83d-0b3524b4569d.png)
+![lidar](https://user-images.githubusercontent.com/48710703/183974299-2ec18a30-11b7-4fc5-a10b-421de4f8db1c.png)
 
 #### CAMERA
 ![camera](https://user-images.githubusercontent.com/48710703/175962721-0a6338a4-1395-4923-b927-63c502d1f745.png)
